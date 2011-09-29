@@ -1,0 +1,176 @@
+body {
+font-family: "Helvetica", "Tahoma", "Arial", sans-serif !important;
+font-size: 0.9em;
+color: #555;
+width: auto;
+background-color: #fff;
+padding: 10px;
+margin: 0;
+}
+
+a:link, a:visited {
+color: #3380bf;
+text-decoration: none;
+}
+a:hover {
+text-decoration: underline;
+outline: none;
+}
+a:active {
+outline: none;
+}
+
+/*Sidebar styles*/
+.supplemental {
+border: 1px solid #e8e8e8;
+background-color: #fdfdfd;
+-webkit-border-radius: 7px;
+-moz-border-radius: 7px;
+border-radius: 7px;
+margin-top: 107px;
+padding: 10px;
+width: 275px;
+}
+
+/*Map window styles*/
+fieldset {
+width: 495px;
+margin: 0 15px 15px 0;
+padding: 10px;
+border: 1px solid #e8e8e8;
+background-color: #f9f9f9;
+-webkit-border-radius: 7px;
+-moz-border-radius: 7px;
+border-radius: 7px;
+-webkit-box-shadow: 3px 3px 10px #ddd;
+-moz-box-shadow: 3px 3px 10px #ddd;
+box-shadow: 3px 3px 10px #ddd;
+}
+fieldset label {
+width: 80px;
+font-weight: normal;
+display: inline-block;
+padding-top: 1px;
+}
+input[type=text] {
+width: 400px;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+}
+input[type=text], #map_window input[type=submit] {
+font-family: inherit;
+font-size: 1.2em;
+}
+fieldset ul {
+margin: 0;
+padding: 0;
+}
+fieldset li {
+padding: 5px 0;
+list-style: none;
+margin: 0;
+}
+#map_controls {
+border-top: 1px solid #ddd;
+margin: 5px 0 0 0;
+padding: 10px 0 0 0;
+position: relative;
+}
+#map_controls a.button {
+margin: 0 15px 0 5px;
+}
+#route_control {
+position: absolute;
+bottom: 2px;
+right: 0;
+}
+#route_control label {
+width: 120px !important;
+}
+#total_mileage {
+position: absolute;
+top: 10px;
+left: 540px;
+overflow: none;
+height: 97px;
+width: 230px;
+margin: 0;
+padding: 4px 5px 0 5px;
+}
+#total_mileage th {
+font-weight: normal;
+}
+#total_mileage span {
+padding-left: 10px;
+font-size: 1.75em;
+color: #128cf5;
+}
+#copyright {
+position: absolute;
+top: 82px;
+left: 0;
+width: 100%;
+text-align: center;
+color: #aaa;
+overflow: none;
+font-size: 12px;
+}
+#map_overview {
+position: absolute;
+top: 138px;
+left: 576px;
+overflow: none;
+}
+#directions {
+display: none;
+margin-bottom: 12px;
+}
+#directions, #map_border {
+position: relative;
+border: 1px solid #e8e8e8;
+background-color: #fdfdfd;
+padding: 7px;
+width: 755px;
+-webkit-border-radius: 7px;
+-moz-border-radius: 7px;
+border-radius: 7px;
+}
+#directions ol {
+padding-right: 5px;
+margin: 5px 0;
+}
+#directions li {
+position: relative;
+}
+#directions li:hover {
+background-color: #fff5Ab;
+cursor:pointer;
+}
+#directions li span.distance {
+position: absolute;
+left: 628px;
+top: 0;
+width: 80px;
+text-align: right;
+}
+#map {
+width: 100%;
+height: 500px;
+}
+#warnings {
+display: none;
+position: absolute;
+color: #666;
+background-color: #fff7f7;
+border: 2px solid #fdd;
+right: 20px;
+top: 20px;
+padding: 10px;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+}
+#warnings p {
+margin: 0;
+}

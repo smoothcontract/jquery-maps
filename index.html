@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Mileage calculator</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  	<meta http-equiv="content-language" content="en-gb" />
+  	<meta name="author" content="Smooth Contract Limited" />
+		<link href="css/map.css" media="all" rel="stylesheet" type="text/css">
+	  <script type="text/javascript">
+	    var jqHost = (("https:" == document.location.protocol) ? "https://ajax.googleapis.com" : "http://ajax.googleapis.com");
+	    var gmHost = "http://maps.google.co.uk";
+	    document.write(unescape("%3Cscript src='" + jqHost + "/ajax/libs/jquery/1.4.4/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
+	    document.write(unescape("%3Cscript src='" + gmHost + "/maps/api/js?sensor=false&region=GB' type='text/javascript'%3E%3C/script%3E"));
+	  </script>
+		<script type="text/javascript" src="js/jquery.map.js"></script>
+	</head>
+	<body id="map_window">
+		<form>
+			<fieldset>
+				<ul>
+					<li><label for="origin">Start from</label><input class="wide" id="origin" name="origin" type="text" value="Solihull" placeholder="Origin address" /></li>
+					<li><label for="destination">Driving to</label><input class="wide" id="destination" name="destination" type="text" value="Hampton in Arden" placeholder="Destination address" /></li>
+				</ul>
+				<div id="map_controls">
+					<input id="search" name="commit" type="submit" value="Find route" />
+					<div id="route_control">
+						<input id="details" name="details" type="checkbox" value="1" /><label for="details">Show directions</label>
+					</div>
+				</div>
+			</fieldset>
+			<div id="total_mileage" class="supplemental">
+				<table>
+					<tbody>
+						<tr>
+							<th>Distance</th>
+							<td><span class="mileage" id="distance">0 miles</span></td>
+						</tr>
+						<tr>
+							<th>Duration</th>
+							<td><span class="mileage" id="time">0 minutes</span></td>
+						</tr>
+					</tbody>
+				</table>
+				<div id="copyright">Map data ©2011 Tele Atlas</div>
+			</div>
+			<div id="map_overview"><a href="#" id="overview">Zoom to show whole route</a></div>
+		</form>
+		<div id="directions"><span style="color: #aaa;">Route directions will be shown here</span></div>
+
+		<div id="map_border">
+			<div id="map"></div>
+			<div id="warnings"></div>
+		</div>
+		
+    <!-- Miscellaneous jQuery functions -->
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#map').xmap({ showError: function(title, message) {
+					alert(title + ' - ' + message);
+				}});
+
+				$('#search').click(function() {
+					var originAddress = $('#origin').val(),
+							destinationAddress = $('#destination').val(),
+							origin = { title: 'Origin address', description: originAddress.replace(/,\s*/, '<br/>'), address: originAddress },
+							destination = { title: 'Destination address', description: destinationAddress.replace(/,\s*/, '<br/>'), address: destinationAddress }
+
+					$('#map').xmap('route', origin, destination);
+					return false;
+				});
+
+				$('#details').click(function() {
+					if (this.checked) {
+						$('#directions').slideDown();
+					} else {
+						$('#directions').slideUp();
+					}
+				});
+
+				$('#overview').click(function() {
+					$('#map').xmap('overview');
+					return false;
+				});
+      });
+    </script>
+	</body>
+</html>
